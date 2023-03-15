@@ -26,3 +26,21 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+
+flows:
+    CustomFuel_Types_Reference_Config:
+        description: Custom Fuel Types Reference Config
+        steps:
+            1:
+                task: assign_permission_set_licenses
+                options:
+                    api_names: NetZeroCloudUserPsl, DataProcessingEnginePsl,TCRMforSustainabilityPsl
+                ui_options:
+                    name: Assign Required Permission Set Licenses
+
+            2:
+                task: assign_permission_sets
+                options:
+                    api_names: NetZeroManager, DataProcessingEngineUser,TCRMforSustainabilityAdmin,TCRMforSustainabilityUser
+                ui_options:
+                    name: Assign Required Permission Sets              

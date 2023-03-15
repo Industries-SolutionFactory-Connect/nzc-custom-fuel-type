@@ -19,12 +19,11 @@
     },
     "languageSettings": {
       "enableTranslationWorkbench": true
-    }
+    },
     "industriesSettings":{
       "enableSustainabilityCloud": true,
       "enableSCCarbonAccounting": true,
       "enableSCAssignFootprint": true
-
     }
   }
 }

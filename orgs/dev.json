@@ -1,6 +1,6 @@
 {
   "orgName": "nzc-custom-fuel-type - Dev Org",
-  "edition": "Developer",
+  "template": "0TT3y000000oOsn",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true

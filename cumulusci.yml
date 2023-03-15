@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.74.0'
+project:
+    name: nzc-custom-fuel-type
+    package:
+        name: nzc-custom-fuel-type
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/nzc-custom-fuel-type/tests
+            options:
+                outputdir: robot/nzc-custom-fuel-type/results
+
+    robot_testdoc:
+        options:
+            path: robot/nzc-custom-fuel-type/tests
+            output: robot/nzc-custom-fuel-type/doc/nzc-custom-fuel-type_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75

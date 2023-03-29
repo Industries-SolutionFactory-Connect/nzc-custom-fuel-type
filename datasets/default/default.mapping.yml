@@ -10,23 +10,15 @@ Insert OtherEmssnFctrSet:
   - RefrigerantLeakageRtInKgItKwh
   - RefrigerantLeakageRtInKgM2
   - RefrigerantLeakageRtInKgSqft
-Insert StnryAssetEnvSrcCnfg:
-  sf_object: StnryAssetEnvSrcCnfg
-  table: StnryAssetEnvSrcCnfg
+Insert AnnualEmssnInventory:
+  sf_object: AnnualEmssnInventory
+  table: AnnualEmssnInventory
   fields:
-  - MasterLabel
-  - Language
-  - DeveloperName
-  - StationaryAssetType
-  - RecordTypeId
+  - Name
+  - Year
 Insert BldgEnrgyIntensity:
   sf_object: BldgEnrgyIntensity
   table: BldgEnrgyIntensity
-  fields:
-  - Name
-Insert CrbnEmssnScopeAlloc:
-  sf_object: CrbnEmssnScopeAlloc
-  table: CrbnEmssnScopeAlloc
   fields:
   - Name
 Insert RefrigerantEmssnFctr:
@@ -34,14 +26,14 @@ Insert RefrigerantEmssnFctr:
   table: RefrigerantEmssnFctr
   fields:
   - Name
-Insert StnryAssetCrbnFtprnt:
-  sf_object: StnryAssetCrbnFtprnt
-  table: StnryAssetCrbnFtprnt
-  fields:
-  - Name
 Insert Account:
   sf_object: Account
   table: Account
+  fields:
+  - Name
+Insert CrbnEmssnScopeAlloc:
+  sf_object: CrbnEmssnScopeAlloc
+  table: CrbnEmssnScopeAlloc
   fields:
   - Name
 Insert ElectricityEmssnFctrSet:
@@ -57,33 +49,33 @@ Insert ElectricityEmssnFctrSet:
   - Co2eEmissionRateUnit
   - Country
   - EmissionFactorDataSource
-  - GenlConversionFctrRevisionDate
   - EmissionFactorUpdateYear
+  - GenlConversionFctrRevisionDate
   - GridSubregion
+  - LocBasedGeothermalMixPct
+  - LocBasedOtherFossilFuelMixPct
   - LocationBasedBiomassMixPct
   - LocationBasedCoalMixPct
   - LocationBasedGasMixPct
-  - LocBasedGeothermalMixPct
   - LocationBasedHydroMixPct
   - LocationBasedNuclearMixPct
   - LocationBasedOilMixPct
-  - LocBasedOtherFossilFuelMixPct
   - LocationBasedOtherFuelMixPct
   - LocationBasedSolarMixPct
   - LocationBasedWindMixPct
   - MarketBasedBiomassMixPct
-  - MktBsdCo2eEmissionRate
-  - MktBsdCo2eEmissionRateUnit
   - MarketBasedCoalMixPct
   - MarketBasedGasMixPct
-  - MktBasedGeothermalMixPct
   - MarketBasedHydroMixPct
   - MarketBasedNuclearMixPct
   - MarketBasedOilMixPct
-  - MktBasedOtherFossilFuelMixPct
   - MarketBasedOtherFuelMixPct
   - MarketBasedSolarMixPct
   - MarketBasedWindMixPct
+  - MktBasedGeothermalMixPct
+  - MktBasedOtherFossilFuelMixPct
+  - MktBsdCo2eEmissionRate
+  - MktBsdCo2eEmissionRateUnit
   - N2oEmissionRate
   - N2oEmissionRateUnit
   - Name
@@ -127,12 +119,12 @@ Insert StnryAssetEnvrSrc:
   fields:
   - BusinessRegion
   - City
+  - IsCompanyOwnedAsset
   - Country
   - Description
-  - IsCompanyOwnedAsset
-  - IsLeedCertified
   - LeaseExpirationDate
   - LeaseIdentifier
+  - IsLeedCertified
   - Name
   - OccupiedFloorArea
   - OccupiedFloorAreaUnit
@@ -166,6 +158,45 @@ Insert StnryAssetEnvrSrc:
       table: StnryAssetEnvrSrc
       key_field: ParentEnvironmentalSourceId
       after: Insert StnryAssetEnvrSrc
+Insert StnryAssetCrbnFtprnt:
+  sf_object: StnryAssetCrbnFtprnt
+  table: StnryAssetCrbnFtprnt
+  fields:
+  - AllocationStatus
+  - AuditApprovalStatus
+  - DataGapStatus
+  - EndDate
+  - FootprintStage
+  - Name
+  - OccupiedFloorArea
+  - OccupiedFloorAreaUnit
+  - ReportingDate
+  - ReportingYear
+  - StartDate
+  - SuplScope1Emissions
+  - SuplScope2LocationBasedEmssn
+  - SuplScope2MarketBasedEmssn
+  - SuplScope3DnstrmEmissions
+  - SuplScope3UpstrmEmissions
+  - TotalFloorArea
+  - TotalFloorAreaUnit
+  lookups:
+    AnnualEmssnInventoryId:
+      table: AnnualEmssnInventory
+      key_field: AnnualEmssnInventoryId
+    BuildingEnergyIntensityId:
+      table: BldgEnrgyIntensity
+      key_field: BuildingEnergyIntensityId
+    RegionalBldgEnergyIntensityId:
+      table: BldgEnrgyIntensity
+      key_field: RegionalBldgEnergyIntensityId
+    PrevYrAnnlCarbonFootprintId:
+      table: StnryAssetCrbnFtprnt
+      key_field: PrevYrAnnlCarbonFootprintId
+      after: Insert StnryAssetCrbnFtprnt
+    StnryAssetEnvrSrcId:
+      table: StnryAssetEnvrSrc
+      key_field: StnryAssetEnvrSrcId
 Insert StnryAssetEnrgyUse:
   sf_object: StnryAssetEnrgyUse
   table: StnryAssetEnrgyUse

@@ -7,6 +7,12 @@ CREATE TABLE "Account" (
 INSERT INTO "Account" VALUES(1,'Acme');
 INSERT INTO "Account" VALUES(2,'salesforce.com');
 INSERT INTO "Account" VALUES(3,'Global Media');
+CREATE TABLE "AnnualEmssnInventory" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	"Year" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "BldgEnrgyIntensity" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
@@ -28,33 +34,33 @@ CREATE TABLE "ElectricityEmssnFctrSet" (
 	"Co2eEmissionRateUnit" VARCHAR(255), 
 	"Country" VARCHAR(255), 
 	"EmissionFactorDataSource" VARCHAR(255), 
-	"GenlConversionFctrRevisionDate" VARCHAR(255), 
 	"EmissionFactorUpdateYear" VARCHAR(255), 
+	"GenlConversionFctrRevisionDate" VARCHAR(255), 
 	"GridSubregion" VARCHAR(255), 
+	"LocBasedGeothermalMixPct" VARCHAR(255), 
+	"LocBasedOtherFossilFuelMixPct" VARCHAR(255), 
 	"LocationBasedBiomassMixPct" VARCHAR(255), 
 	"LocationBasedCoalMixPct" VARCHAR(255), 
 	"LocationBasedGasMixPct" VARCHAR(255), 
-	"LocBasedGeothermalMixPct" VARCHAR(255), 
 	"LocationBasedHydroMixPct" VARCHAR(255), 
 	"LocationBasedNuclearMixPct" VARCHAR(255), 
 	"LocationBasedOilMixPct" VARCHAR(255), 
-	"LocBasedOtherFossilFuelMixPct" VARCHAR(255), 
 	"LocationBasedOtherFuelMixPct" VARCHAR(255), 
 	"LocationBasedSolarMixPct" VARCHAR(255), 
 	"LocationBasedWindMixPct" VARCHAR(255), 
 	"MarketBasedBiomassMixPct" VARCHAR(255), 
-	"MktBsdCo2eEmissionRate" VARCHAR(255), 
-	"MktBsdCo2eEmissionRateUnit" VARCHAR(255), 
 	"MarketBasedCoalMixPct" VARCHAR(255), 
 	"MarketBasedGasMixPct" VARCHAR(255), 
-	"MktBasedGeothermalMixPct" VARCHAR(255), 
 	"MarketBasedHydroMixPct" VARCHAR(255), 
 	"MarketBasedNuclearMixPct" VARCHAR(255), 
 	"MarketBasedOilMixPct" VARCHAR(255), 
-	"MktBasedOtherFossilFuelMixPct" VARCHAR(255), 
 	"MarketBasedOtherFuelMixPct" VARCHAR(255), 
 	"MarketBasedSolarMixPct" VARCHAR(255), 
 	"MarketBasedWindMixPct" VARCHAR(255), 
+	"MktBasedGeothermalMixPct" VARCHAR(255), 
+	"MktBasedOtherFossilFuelMixPct" VARCHAR(255), 
+	"MktBsdCo2eEmissionRate" VARCHAR(255), 
+	"MktBsdCo2eEmissionRateUnit" VARCHAR(255), 
 	"N2oEmissionRate" VARCHAR(255), 
 	"N2oEmissionRateUnit" VARCHAR(255), 
 	"Name" VARCHAR(255), 
@@ -63,7 +69,7 @@ CREATE TABLE "ElectricityEmssnFctrSet" (
 	"OtherEmssnFctrId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "ElectricityEmssnFctrSet" VALUES(1,'0.032','LBS_PER_MWH','','513.5','LBS_PER_MWH','515.5','LBS_PER_MWH','US','','','2023','CAMX','2.8','3.6','47.1','4.2','8.5','8.3','0.0','0.8','0.3','17.3','7.2','2.8','515.5','LBS_PER_MWH','3.6','47.1','4.1','8.5','8.3','','0.8','0.03','17.3','7.2','0.004','LBS_PER_MWH','CAMX - WECC California - eGRID2023','','','');
+INSERT INTO "ElectricityEmssnFctrSet" VALUES(1,'0.032','LBS_PER_MWH','','513.5','LBS_PER_MWH','515.5','LBS_PER_MWH','US','','2023','','CAMX','4.2','0.8','2.8','3.6','47.1','8.5','8.3','0.0','0.3','17.3','7.2','2.8','3.6','47.1','8.5','8.3','','0.03','17.3','7.2','4.1','0.8','515.5','LBS_PER_MWH','0.004','LBS_PER_MWH','CAMX - WECC California - eGRID2023','','','');
 CREATE TABLE "OtherEmssnFctrSet" (
 	id INTEGER NOT NULL, 
 	"Ch4GlblWarmingPot" VARCHAR(255), 
@@ -101,10 +107,32 @@ CREATE TABLE "RefrigerantEmssnFctr" (
 );
 CREATE TABLE "StnryAssetCrbnFtprnt" (
 	id INTEGER NOT NULL, 
+	"AllocationStatus" VARCHAR(255), 
+	"AuditApprovalStatus" VARCHAR(255), 
+	"DataGapStatus" VARCHAR(255), 
+	"EndDate" VARCHAR(255), 
+	"FootprintStage" VARCHAR(255), 
 	"Name" VARCHAR(255), 
+	"OccupiedFloorArea" VARCHAR(255), 
+	"OccupiedFloorAreaUnit" VARCHAR(255), 
+	"ReportingDate" VARCHAR(255), 
+	"ReportingYear" VARCHAR(255), 
+	"StartDate" VARCHAR(255), 
+	"SuplScope1Emissions" VARCHAR(255), 
+	"SuplScope2LocationBasedEmssn" VARCHAR(255), 
+	"SuplScope2MarketBasedEmssn" VARCHAR(255), 
+	"SuplScope3DnstrmEmissions" VARCHAR(255), 
+	"SuplScope3UpstrmEmissions" VARCHAR(255), 
+	"TotalFloorArea" VARCHAR(255), 
+	"TotalFloorAreaUnit" VARCHAR(255), 
+	"AnnualEmssnInventoryId" VARCHAR(255), 
+	"BuildingEnergyIntensityId" VARCHAR(255), 
+	"PrevYrAnnlCarbonFootprintId" VARCHAR(255), 
+	"RegionalBldgEnergyIntensityId" VARCHAR(255), 
+	"StnryAssetEnvrSrcId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "StnryAssetCrbnFtprnt" VALUES(1,'Cumulus Tower_CY_2023');
+INSERT INTO "StnryAssetCrbnFtprnt" VALUES(1,'','','','2023-12-31','Emission Source Confirmation','Cumulus Tower_CY_2023','1600.0','sqft','','2023','2023-01-01','','','','','','2000.0','sqft','','','','','1');
 CREATE TABLE "StnryAssetEnrgyUse" (
 	id INTEGER NOT NULL, 
 	"AllocatedRenewableEnergyInKwh" VARCHAR(255), 
@@ -139,37 +167,23 @@ CREATE TABLE "StnryAssetEnrgyUse" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "StnryAssetEnrgyUse" VALUES(1,'','','','2023-03-31','','1900.0','0wVDE000000CaRC2A0','0wUDE000000CaRC2A0','Cumulus Tower - 2023 - March 1 - March 31','1600.0','sqft','1.0','','','2023-03-01','','','','','','False','2000.0','sqft','1','1','','1','1','');
-CREATE TABLE "StnryAssetEnvSrcCnfg" (
-	id INTEGER NOT NULL, 
-	"MasterLabel" VARCHAR(255), 
-	"Language" VARCHAR(255), 
-	"DeveloperName" VARCHAR(255), 
-	"RecordTypeId" VARCHAR(255), 
-	"StationaryAssetType" VARCHAR(255), 
-	PRIMARY KEY (id)
-);
-INSERT INTO "StnryAssetEnvSrcCnfg" VALUES(1,'Commercial Building','en_US','Commercial_Building','012DE000006Gs4lYAC','CommercialBuilding');
-INSERT INTO "StnryAssetEnvSrcCnfg" VALUES(2,'Data Center','en_US','Data_Center','012DE000006Gs4mYAC','DataCenter');
-CREATE TABLE "StnryAssetEnvSrcCnfg_rt_mapping" (
-	record_type_id VARCHAR(18) NOT NULL, 
-	developer_name VARCHAR(255), 
-	PRIMARY KEY (record_type_id)
-);
+INSERT INTO "StnryAssetEnrgyUse" VALUES(2,'','','','2023-02-28','','1600.0','0wVDE000000CaRC2A0','0wUDE000000CaRC2A0','Cumulus Tower - 2023 - Feb 1 - Feb 28','1600.0','sqft','1.0','','','2023-02-01','','','','','','False','2000.0','sqft','1','1','','1','1','');
 CREATE TABLE "StnryAssetEnvrSrc" (
 	id INTEGER NOT NULL, 
 	"BusinessRegion" VARCHAR(255), 
 	"City" VARCHAR(255), 
+	"IsCompanyOwnedAsset" VARCHAR(255), 
 	"Country" VARCHAR(255), 
 	"Description" VARCHAR(255), 
-	"IsCompanyOwnedAsset" VARCHAR(255), 
-	"IsLeedCertified" VARCHAR(255), 
 	"LeaseExpirationDate" VARCHAR(255), 
 	"LeaseIdentifier" VARCHAR(255), 
+	"IsLeedCertified" VARCHAR(255), 
 	"Name" VARCHAR(255), 
 	"OccupiedFloorArea" VARCHAR(255), 
 	"OccupiedFloorAreaUnit" VARCHAR(255), 
 	"PostalCode" VARCHAR(255), 
 	"PremiseIdentifier" VARCHAR(255), 
+	"RecordTypeId" VARCHAR(255), 
 	"State" VARCHAR(255), 
 	"StationaryAssetIdentifier" VARCHAR(255), 
 	"StationaryAssetType" VARCHAR(255), 
@@ -177,7 +191,6 @@ CREATE TABLE "StnryAssetEnvrSrc" (
 	"StreetAddress2" VARCHAR(255), 
 	"TotalFloorArea" VARCHAR(255), 
 	"TotalFloorAreaUnit" VARCHAR(255), 
-	"RecordTypeId" VARCHAR(255), 
 	"CrbnEmssnScopeAllocId" VARCHAR(255), 
 	"ElectricityEmssnFctrId" VARCHAR(255), 
 	"OtherEmssnFctrId" VARCHAR(255), 
@@ -186,7 +199,7 @@ CREATE TABLE "StnryAssetEnvrSrc" (
 	"RegionalBldgEnergyIntensityId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "StnryAssetEnvrSrc" VALUES(1,'AMER','','US','','True','False','','','Cumulus Tower','1600.0','sqft','','','','','Office','','','2000.0','sqft','012DE000006Gs4lYAC','','1','1','','','');
+INSERT INTO "StnryAssetEnvrSrc" VALUES(1,'AMER','','True','US','','','','False','Cumulus Tower','1600.0','sqft','','','012DE000006Gs4lYAC','','','Office','','','2000.0','sqft','','1','1','','','');
 CREATE TABLE "StnryAssetEnvrSrc_rt_mapping" (
 	record_type_id VARCHAR(18) NOT NULL, 
 	developer_name VARCHAR(255), 

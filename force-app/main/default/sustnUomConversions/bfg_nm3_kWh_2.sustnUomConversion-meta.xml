@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SustnUomConversion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <conversionFactor>10.28</conversionFactor>
+    <fuelType>0wU7d000000000VEAQ</fuelType>
+    <masterLabel>bfg_nm3_kWh</masterLabel>
+    <sourceUom>0wV7d000000000QEAQ</sourceUom>
+    <targetUom>kWh</targetUom>
+    <uomsKey>0wU7d000000000V-0wV7d000000000Q-8</uomsKey>
+</SustnUomConversion>

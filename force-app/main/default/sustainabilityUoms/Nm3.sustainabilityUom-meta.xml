@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SustainabilityUom xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Normal Cubic Meter.</description>
+    <isProductUom>false</isProductUom>
+    <isStationaryAssetUom>true</isStationaryAssetUom>
+    <isVehicleAssetUom>false</isVehicleAssetUom>
+    <masterLabel>Nm3</masterLabel>
+    <unitType>Volume</unitType>
+</SustainabilityUom>

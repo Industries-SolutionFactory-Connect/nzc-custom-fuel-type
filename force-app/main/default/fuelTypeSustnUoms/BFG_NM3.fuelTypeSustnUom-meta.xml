@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FuelTypeSustnUom xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fuelType>0wU7d000000000VEAQ</fuelType>
+    <masterLabel>BFG_nm3</masterLabel>
+    <unitOfMeasure>0wV7d000000000QEAQ</unitOfMeasure>
+</FuelTypeSustnUom>

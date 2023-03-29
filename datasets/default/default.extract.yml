@@ -1,0 +1,36 @@
+extract:
+  FuelType:
+    fields:
+    - IsActive
+    - Description
+    - DeveloperName
+    - MasterLabel
+    - Language
+    - IsStationaryAssetFuel
+    - IsVehicleAssetFuel
+  FuelTypeSustnUom:
+    fields:
+    - DeveloperName
+    - FuelType
+    - MasterLabel
+    - Language
+    - UnitOfMeasure
+  SustnUomConversion:
+    fields:
+    - FuelType
+    - ConversionFactor
+    - DeveloperName
+    - MasterLabel
+    - Language
+    - SourceUom
+    - TargetUom
+  SustainabilityUom:
+    fields:
+    - Description
+    - DeveloperName
+    - Language
+    - IsProductUom
+    - IsStationaryAssetUom
+    - MasterLabel
+    - UnitType
+    - IsVehicleAssetUom

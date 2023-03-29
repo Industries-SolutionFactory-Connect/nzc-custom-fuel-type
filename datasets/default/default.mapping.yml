@@ -1,0 +1,43 @@
+Insert FuelType:
+  sf_object: FuelType
+  table: FuelType
+  fields:
+  - IsActive
+  - Description
+  - DeveloperName
+  - MasterLabel
+  - Language
+  - IsStationaryAssetFuel
+  - IsVehicleAssetFuel
+Insert FuelTypeSustnUom:
+  sf_object: FuelTypeSustnUom
+  table: FuelTypeSustnUom
+  fields:
+  - DeveloperName
+  - FuelType
+  - MasterLabel
+  - Language
+  - UnitOfMeasure
+Insert SustnUomConversion:
+  sf_object: SustnUomConversion
+  table: SustnUomConversion
+  fields:
+  - FuelType
+  - ConversionFactor
+  - DeveloperName
+  - MasterLabel
+  - Language
+  - SourceUom
+  - TargetUom
+Insert SustainabilityUom:
+  sf_object: SustainabilityUom
+  table: SustainabilityUom
+  fields:
+  - Description
+  - DeveloperName
+  - Language
+  - IsProductUom
+  - IsStationaryAssetUom
+  - MasterLabel
+  - UnitType
+  - IsVehicleAssetUom
